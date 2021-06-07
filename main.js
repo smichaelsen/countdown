@@ -16,7 +16,7 @@ var timer = {
     } else {
       var minutes = Math.floor((secondsRemaining % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((secondsRemaining % (1000 * 60)) / 1000);
-      timer.element.innerText = minutes + ':' + seconds;
+      timer.element.innerText = minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
     }
   },
 };
