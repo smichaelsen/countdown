@@ -1,0 +1,10 @@
+body {
+  background-color: transparent;
+}
+
+.timer {
+  text-align: center;
+  color: red;
+  font-family: sans-serif;
+  font-size: 70px;
+}
