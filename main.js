@@ -3,7 +3,7 @@ var timer = {
   targetTime: 0,
   init: function() {
     timer.element =  document.querySelector('[data-countdown]');
-    var secondsTotal = timer.element.dataset.countdownMinutes * 60;
+    var secondsTotal = ((timer.element.dataset.countdownMinutes || 0) * 60) + (timer.element.dataset.countdownSeconds || 0);
     timer.targetTime = new Date(new Date().getTime() + secondsTotal * 1000);
     timer.updateView();
     window.setInterval(timer.updateView, 500);
