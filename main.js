@@ -11,9 +11,13 @@ var timer = {
   updateView: function() {
     var now = new Date();
     var secondsRemaining = timer.targetTime - now;
-    var minutes = Math.floor((secondsRemaining % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((secondsRemaining % (1000 * 60)) / 1000);
-    timer.element.innerText = minutes + ':' + seconds;
+    if (secondsRemaining < 0) {
+      timer.element.innerText = timer.element.dataset.countdownEndText;
+    } else {
+      var minutes = Math.floor((secondsRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((secondsRemaining % (1000 * 60)) / 1000);
+      timer.element.innerText = minutes + ':' + seconds;
+    }
   },
 };
 
